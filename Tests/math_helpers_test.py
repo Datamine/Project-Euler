@@ -11,16 +11,25 @@ from Utilities import math_helpers
 
 class TriangleNumbers(unittest.TestCase):
     """
-    tests for Utilities.math_helpers.triangle_numbers()
+    tests for Utilities.math_helpers.triangle_number_generator
     """
 
-    def test_generation(self):
+    def test_generation_index_zero(self):
         """
-        test that the generator yields the correct output
+        test that the generator yields the correct output when indexing from zero
         """
-        generator = math_helpers.triangle_numbers()
+        generator = math_helpers.triangle_number_generator()
         first_ten_triangle_numbers = [next(generator) for _ in range(11)]
         canonical_values = [0, 1, 3, 6, 10, 15, 21, 28, 36, 45, 55]
+        self.assertEqual(canonical_values, first_ten_triangle_numbers)
+
+    def test_generation_index_one(self):
+        """
+        test that the generator yields the correct output when indexing from one
+        """
+        generator = math_helpers.triangle_number_generator(1)
+        first_ten_triangle_numbers = [next(generator) for _ in range(10)]
+        canonical_values = [1, 3, 6, 10, 15, 21, 28, 36, 45, 55]
         self.assertEqual(canonical_values, first_ten_triangle_numbers)
 
 class Divisors(unittest.TestCase):
@@ -90,8 +99,6 @@ class NumDivisors(unittest.TestCase):
 
         case_three = math_helpers.num_divisors(6930)
         self.assertEqual(case_three, 48)
-
-
 
 if __name__ == '__main__':
     unittest.main()

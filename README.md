@@ -13,6 +13,12 @@ be imported. For example, from here you might run:
 
 
 
+## notes to self
+
+will remove soon:
+
+chmod 755 cleanswapfiles
+
 python -m unittest test_mymath2.TestAdd
 
 python test_mymath.py -v
