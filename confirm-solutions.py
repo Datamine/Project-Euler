@@ -6,6 +6,7 @@ don't break after adjusting helper functions, for example.
 """
 
 import os
+import time
 import importlib
 
 # solutions dict for Euler Problems thus far
@@ -22,6 +23,10 @@ solutions = {
     "010": 142913828922,
     "011": 70600674,
     "012": 76576500,
+    "013": "5537376230",
+    "014": 837799,
+    "015": 137846528820,
+    "016": 1366,
 }
 
 # lambda filter to remove the __pycache__ dir, __init__ file from consideration
@@ -31,9 +36,11 @@ for problem_number in problems:
     path_package_formatted = path.replace("/", ".")
     try:
         current_sol = importlib.import_module(path_package_formatted)
+        start = time.time()
         solution_obtained = current_sol.main()
+        time_elapsed = time.time() - start
         if solutions[problem_number] == solution_obtained:
-            print("Problem {}: MATCH.".format(problem_number))
+            print("Problem {}: MATCH. Time: {:.5f}.\tSolution: {}.".format(problem_number, time_elapsed, solution_obtained))
         else:
             print("Problem {}: ERROR. Expected: {}, Received: {}".format(problem_number, solutions[problem_number], solution_obtained))
     except Exception as e:
