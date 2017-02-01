@@ -10,18 +10,16 @@ def primes_up_to(max_prime):
     for index, flag in enumerate(prime_flags):
         if flag:
             yield index
-            for n in range(index**2, max_prime, index): 
+            for n in range(index**2, max_prime, index):
                 prime_flags[n] = False
 
-def prime_numbers(m):
+def prime_numbers():
     """
-    generates the first m primes.
+    generates indefinitely many prime numbers.
     """
     n = 2
     primes = []
     while True:
-        if len(primes) == m:
-            return
         is_prime = True
         for p in primes:
             if p**2 > n:
@@ -40,7 +38,7 @@ def prime_factors(n):
     """
     factors = []
     current_factor = 2
-    
+
     while n > 1:
         while n % current_factor == 0:
             factors.append(current_factor)

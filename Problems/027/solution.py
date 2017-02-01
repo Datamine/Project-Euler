@@ -7,7 +7,8 @@ from Utilities import primes
 
 def main():
     # caching the first thousand primes. it seems unlikely that we'll need more.
-    first_thousand_primes = set(primes.prime_numbers(1000))
+    primegen = primes.prime_numbers()
+    first_thousand_primes = set([next(primegen) for x in range(1000)])
     max_number_of_primes = 0
     corresponding_coefficients_product = 0
 

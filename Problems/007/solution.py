@@ -6,13 +6,11 @@ sys.path.append(os.getcwd())
 from Utilities import primes
 
 def main():
-    gen = primes.prime_numbers(10001)
+    gen = primes.prime_numbers()
 
-    for prime in gen:
-        pass
-
-    # exhaust the generator. this returns the final item.
-    return prime
+    for index, prime in enumerate(gen):
+        if index == 10000:
+            return prime
 
 if __name__=='__main__':
     print(main())

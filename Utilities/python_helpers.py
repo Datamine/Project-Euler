@@ -20,3 +20,13 @@ def print_grid(nested_list):
     """
     for row in nested_list:
         print(row)
+
+def left_and_right_truncate(s):
+    resulting_strings = set([])
+
+    for i in range(len(s)):
+        resulting_strings.add(s[i:])
+        resulting_strings.add(s[:i])
+
+    resulting_strings.discard('')
+    return resulting_strings
