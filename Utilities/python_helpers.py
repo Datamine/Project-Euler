@@ -13,3 +13,10 @@ def product(iterable):
     computes the product of an iterable containing numbers e.g. [1,2,3]
     """
     return reduce(lambda x,y: x*y, iterable)
+
+def print_grid(nested_list):
+    """
+    for debugging
+    """
+    for row in nested_list:
+        print(row)

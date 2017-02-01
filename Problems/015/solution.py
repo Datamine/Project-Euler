@@ -1,12 +1,5 @@
 #!/usr/bin/python3
 
-def printgrid(grid):
-    """
-    for debugging
-    """
-    for row in grid:
-        print(row)
-
 def main():
     # dynamic programming problem. The trick is to realize that the number of paths
     # to a given square is the sum of the number of paths to square to the left

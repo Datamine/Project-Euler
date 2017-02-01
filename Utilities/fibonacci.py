@@ -1,17 +1,11 @@
 #!/usr/bin/python3
 
-def fibonacci_numbers(n):
+def fibonacci_numbers():
     """
-    a generator of fibonacci numbers up to the element exceeding n.
+    a generator of fibonacci numbers
     """
     first, second = 0, 1
     while True:
         new_element = first + second
         yield first
-        if new_element < n:
-            first, second = second, new_element
-        else:
-            yield second
-            return
-
-
+        first, second = second, new_element

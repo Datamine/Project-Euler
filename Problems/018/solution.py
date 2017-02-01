@@ -3,6 +3,9 @@
 import os, sys
 sys.path.append(os.getcwd())
 
+from Utilities import python_helpers
+# use python_helpers.print_grid for debugging, if need be
+
 def main():
     with open("Problems/018/triangle.txt", "r") as f:
         triangle = list(map(lambda x: list(map(int, x.strip().split(" "))), f.readlines()))
@@ -21,9 +24,9 @@ def main():
             # number has only one adjacent number).
             adjacent_numbers = []
             if col_index != 0:
-                adjacent_numbers.append(triangle[row_index][col_index - 1])
-            elif col_index != len(row)-1:
-                adjacent_numbers.append(triangle[row_index][col_index])
+                adjacent_numbers.append(triangle[row_index - 1][col_index - 1])
+            if col_index != len(row)-1:
+                adjacent_numbers.append(triangle[row_index - 1][col_index])
             triangle[row_index][col_index] += max(adjacent_numbers)
 
     # return max element in last row

@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 
-import os, sys
-sys.path.append(os.getcwd())
-
 def main():
     # write down all the unique mappings, then decompose numbers & take lengths.
     # the solution to this problem is kind of gross and not as elegant as the
