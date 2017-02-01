@@ -25,3 +25,8 @@ Call with `python3 tests.py`.
 Verifies the solutions against the canonical values. This is useful to check that all solutions
 are still working as desired, even after having made some changes to the `Utilities`.
 Run simply with `python3 confirm-solutions.py`.
+
+## Further Notes
+
+There's no `requirements.txt` because this project solely uses standard, included libraries
+and the custom-written `Utilities`. 
