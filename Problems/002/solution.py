@@ -9,8 +9,13 @@ from Utilities import fibonacci
 # whereas I start mine with 0, 1, 1, ... the difference doesn't matter because 1 is odd.
 
 def main():
-    even_fibonacci_numbers = filter(lambda x: x%2==0, fibonacci.fibonacci_numbers(4000000))
-    return sum(even_fibonacci_numbers)
+    sum_even_fibonacci_numbers = 0
+    for f in fibonacci.fibonacci_numbers():
+        if f > 4000000:
+            break
+        if f % 2 == 0:
+            sum_even_fibonacci_numbers += f
+    return sum_even_fibonacci_numbers
 
 if __name__=='__main__':
     print(main())

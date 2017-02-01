@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 
-import os, sys
-sys.path.append(os.getcwd())
-
 def main():
     longest_cycle = 0
     longest_cycle_denominator = 0
@@ -22,4 +19,4 @@ def main():
     return longest_cycle_denominator
 
 if __name__=='__main__':
-	print(main())
+    print(main())
