@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 
-import os, sys
-sys.path.append(os.getcwd())
-
 def main():
     # note that 9^5 = 59,049. So the maximum sum of digits to the fifth power,
     # for a four-digit number, for example, is 4 * 9^5 = 236,196. For a seven-digit

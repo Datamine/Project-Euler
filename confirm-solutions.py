@@ -41,7 +41,8 @@ solutions = {
     "028": 669171001,
     "029": 9183,
     "030": 443839,
-
+    "031": 73682,
+    "032": 45228,
 }
 
 # lambda filter to remove the __pycache__ dir, __init__ file from consideration
