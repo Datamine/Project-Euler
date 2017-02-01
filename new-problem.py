@@ -6,6 +6,8 @@ current_path = os.getcwd()
 
 if not os.path.exists(new_problem):
     os.mkdir(new_problem)
+else:
+    raise IOError("Error! Path `{}` already exists. Exiting.".format(new_problem))
 
 filetext = ["#!/usr/bin/python3\n", "\n", "import os, sys\n", "sys.path.append(os.getcwd())\n",
             "\n", "def main():\n", "\n", "if __name__=='__main__':\n", "    print(main())\n"]

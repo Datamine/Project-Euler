@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 
-import os, sys
-sys.path.append(os.getcwd())
-
 def main():
     # think of the spiral as a set of nested squares, where the side length grows
     # o-n every level by two (one integer on each side). then we try to capture all
