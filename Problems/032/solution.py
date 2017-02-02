@@ -9,8 +9,11 @@ def main():
                 # future strings will only be longer
                 break
             if "0" in combined or len(set(combined)) != 9:
+                # strings containing 0 are not admissible,
+                # a pandigital number will contain exactly 9 digits
                 continue
             products.add(i * j)
+
     return sum(products)
 
 if __name__=='__main__':

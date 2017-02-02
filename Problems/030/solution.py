@@ -9,7 +9,7 @@ def main():
 
     accumulator = 0
     # start the range at 10. according to the problem, single-digit numbers do not create sums,
-    # which i disagree with, but so be it.
+    # which i find suspect, but so be it.
     for i in range(10, 354295):
         fifth_digit_sum = sum(int(c)**5 for c in str(i))
         if fifth_digit_sum == i:

@@ -48,6 +48,12 @@ solutions = {
     "035": 55,
     "036": 872187,
     "037": 748317,
+    "038": "932718654",
+    "039": 840,
+    "040": 210,
+    "041": 7652413,
+    "042": 162,
+    "043": 16695334890,
 }
 
 # lambda filter to remove the __pycache__ dir, __init__ file from consideration

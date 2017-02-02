@@ -15,6 +15,7 @@ def main():
         s = sum(factorial(int(x)) for x in str(i))
         if s == i:
             accumulator += i
+
     return accumulator
 
 if __name__=='__main__':

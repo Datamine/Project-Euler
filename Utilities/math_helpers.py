@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 from functools import reduce
 from math import sqrt, ceil
-from itertools import count
+from itertools import count, accumulate
 from .python_helpers import count_iterable
 
 def triangle_number_generator(start=0):
@@ -14,6 +14,13 @@ def triangle_number_generator(start=0):
     for n in natural_numbers:
         triangle_number += n
         yield triangle_number
+
+def first_n_triangle_numbers(n):
+    """
+    faster way to return the first n triangle numbers
+    (starting at 1)
+    """
+    return accumulate(range(1,n+1))
 
 def divisors(n):
     """

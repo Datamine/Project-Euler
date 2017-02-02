@@ -8,14 +8,14 @@ from Utilities import python_helpers
 
 def main():
     primegen = primes.prime_numbers()
-    # cheating a little: I didn't know how these primes are distributed, so I first
-    # generated the first million primes. That took a while. The result showed I actually
-    # only neeeded to generate primes up to 3797. This is still a generous margin above.
-    cached_primes = set([next(primegen) for x in range(100000)])
+    # cheating a little: I didn't know how these primes are distributed, so on my first attempt,
+    # I generated the first million primes. That took a while. The result showed I actually
+    # only neeeded to generate far fewer primes.
+    cached_primes = set(next(primegen) for x in range(75000))
     result_primes = []
 
     for prime in cached_primes:
-        truncated = map(int, python_helpers.left_and_right_truncate(str(prime)))
+        truncated = map(int, python_helpers.left_right_truncate(str(prime)))
         if all(t in cached_primes for t in truncated):
             if prime in [2,3,5,7]:
                 # remember that the problem statement asked us to exclude 2,3,5,7.

@@ -10,7 +10,8 @@ def count_iterable(iterable):
 
 def product(iterable):
     """
-    computes the product of an iterable containing numbers e.g. [1,2,3]
+    computes the product of an iterable containing items on which multiplication
+    is a valid operation, e.g. [1,2,3] or [Fraction(1,5), Fraction(2,3)], etc.
     """
     return reduce(lambda x,y: x*y, iterable)
 
@@ -21,7 +22,11 @@ def print_grid(nested_list):
     for row in nested_list:
         print(row)
 
-def left_and_right_truncate(s):
+def left_right_truncate(s):
+    """
+    iteratively removes characters from either end of the string, returns
+    all substrings thus created.
+    """
     resulting_strings = set([])
 
     for i in range(len(s)):

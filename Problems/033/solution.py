@@ -16,15 +16,15 @@ def main():
     # structure the loops to ensure numerator/denominator < 1
     for denominator in range(10,100):
         for numerator in range(10,denominator):
-            if numerator%10 == 0 or numerator==denominator:
+            if numerator%10 == 0 or numerator == denominator:
                 # skip trivial cases
                 continue
 
             str_d = str(denominator)
             str_n = str(numerator)
             intersection = [x for x in str_d if x in str_n]
-            if len(intersection) == 1:
-                common_element = intersection[0]
+            for common_element in intersection:
+                # note that the only possibilities are for there to be zero or one common elements
                 new_numerator = str_n.replace(common_element, '')
                 new_denominator = str_d.replace(common_element, '')
                 if len(new_numerator) == 1 and len(new_denominator) == 1 and new_denominator != '0' and new_numerator != '0':
