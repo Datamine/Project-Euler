@@ -35,3 +35,9 @@ def left_right_truncate(s):
 
     resulting_strings.discard('')
     return resulting_strings
+
+def are_permutations(*args):
+    """
+    tests whether string-arguments supplied are all permutations of one another
+    """
+    return

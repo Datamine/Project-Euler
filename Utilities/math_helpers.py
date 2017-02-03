@@ -4,9 +4,34 @@ from math import sqrt, ceil
 from itertools import count, accumulate
 from .python_helpers import count_iterable
 
+def hexagonal_number_generator():
+    """
+    generator that yields the hexagonal numbers, starting from 1
+    """
+    natural_numbers = count(1)
+    for n in natural_numbers:
+        yield n * (2 * n - 1)
+
+def pentagonal_number_generator():
+    """
+    generator that yields the pentagonal numbers, starting from 1
+    """
+    natural_numbers = count(1)
+    for n in natural_numbers:
+        yield (n * (3 * n - 1)) // 2
+
+def is_pentagonal(n):
+    """
+    returns True if a number is a pentagonal number, False otherwise.
+    """
+    # inverse function of n(3n-1)/2. if result is an integer, then that natural number
+    # yields that pentagonal number.
+    res = (sqrt(24 * n + 1) + 1) / 6.0
+    return res % 1 == 0
+
 def triangle_number_generator(start=0):
     """
-    generator that yields a the triangle numbers
+    generator that yields the triangle numbers
         - start: integer, dictates the starting natural number (use: index naturals from 0/1)
     """
     natural_numbers = count(start)
