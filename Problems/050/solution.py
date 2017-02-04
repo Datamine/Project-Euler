@@ -4,28 +4,31 @@ import os, sys
 sys.path.append(os.getcwd())
 
 from Utilities import primes
-from itertools import accumulate
 
 def main():
 
-    prime_numbers = primes.primes_up_to(1000000)
-    prime_sums_cumulative = list(accumulate(prime_numbers))
+    prime_number_list = list(primes.primes_up_to(1000000))
     # for faster lookups
-    prime_number_set = set(prime_numbers)
+    prime_number_set = set(prime_number_list)
 
-    max_consecutives = 0
+    max_sequence_length = 0
     corresponding_prime = 0
 
-    for s1 in prime_sums_cumulative:
-        for s2 in prime_sums_cumulative:
-            if s1 - s2 > 1000000:
+    chain = []
+
+    for index, prime in enumerate(prime_number_list):
+        sequence_length = 0
+        total = 0
+        for sub_prime in prime_number_list[index:]:
+            total += sub_prime
+            if total > 1000000:
                 break
-            if s1 - s2 in prime_number_set:
-                print(s1-s2)
-                number_consecutives = prime_sums_cumulative.index(s1) - prime_sums_cumulative.index(s2)
-                if number_consecutives > max_consecutives:
-                    max_consecutives = number_consecutives
-                    corresponding_prime = prime_numbers[prime_sums_cumulative.index(s1)]
+
+            sequence_length += 1
+            if total in prime_number_set and sequence_length > max_sequence_length:
+                max_sequence_length = sequence_length
+                corresponding_prime = total
+
     return corresponding_prime
 
 if __name__=='__main__':

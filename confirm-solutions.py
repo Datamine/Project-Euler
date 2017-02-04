@@ -58,11 +58,12 @@ solutions = {
     "045": 1533776805,
     "046": 5777,
     "047": 134043,
-    "048": 9110846700,
-    "049": "629929699629",
+    "048": "9110846700",
+    "049": "296962999629",
+    "050": 997651,
 }
 
-# lambda filter to remove the __pycache__ dir, __init__ file from consideration
+# filter to remove the __pycache__ dir, __init__ file from consideration
 problems = sorted(filter(lambda x: x.isdigit(), os.listdir("Problems")))
 for problem_number in problems:
     path = os.path.join("Problems", problem_number, "solution")
