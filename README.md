@@ -1,17 +1,17 @@
 # Project-Euler
 My solutions to Project Euler exercises. Currently this lists only solutions in Python 3.6,
-but I plan to add some solutions in other languages as well.
-
-- `new-problem.py`: running this generates a new folder and solution template. 
-Takes one command-line argument: the new problem. Example: `python3 new-problem.py 999`.
+though I may eventually add some solutions in other languages as well.
 
 All solutions should be run from the `/Project-Euler` directory. There's a small
 preamble in some solutions that appends to the system path so that `Utilities` can
 be imported. For example, from here you might run: `python3 005/solution.py`.
 
-## Addenda
+## Tools and Addenda
 
-Also included are some test-suites, etc. You may find the following files useful:
+You may find the following useful:
+
+- `new-problem.py`: running this generates a new folder and solution template. 
+Takes one command-line argument: the new problem. Example: `python3 new-problem.py 999`.
 
 - `clean-swapfiles.sh`: recursively cleans out all the vim swapfiles in the directory.
 Remember to `chmod 755 clean-swapfiles.sh` before attempting to use.
@@ -20,6 +20,8 @@ Remember to `chmod 755 clean-swapfiles.sh` before attempting to use.
 Call with `python3 tests.py`. 
 
 - `Tests`: directory containing unittests for the Utilities. Call with e.g. `python3 Tests/math_helpers_test.py`.
+
+- `Utilities`: directory containing modules containing frequently used/re-usable helper functions.
 
 - `confirm-solutions.py`: runs all the solutions files currently in the `Problems` subdirectories.
 Verifies the solutions against the canonical values. This is useful to check that all solutions
