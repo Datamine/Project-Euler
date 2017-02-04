@@ -34,7 +34,9 @@ def prime_numbers():
 
 def prime_factors(n):
     """
-    returns the list of prime factors of n.
+    returns the list of prime factors of n. This includes duplicate factors
+    if appropriate, e.g. prime_factors(8) = [2,2,2]. Should call set() on output
+    to get uniques.
     """
     factors = []
     current_factor = 2

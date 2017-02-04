@@ -1,5 +1,5 @@
 # Project-Euler
-My solutions to Project Euler exercises. Currently this lists only Python3 solutions,
+My solutions to Project Euler exercises. Currently this lists only solutions in Python 3.6,
 but I plan to add some solutions in other languages as well.
 
 - `new-problem.py`: running this generates a new folder and solution template. 
@@ -28,5 +28,5 @@ Run simply with `python3 confirm-solutions.py`.
 
 ## Further Notes
 
-There's no `requirements.txt` because this project solely uses standard, included libraries
-and the custom-written `Utilities`. 
+There's no `requirements.txt` because this project solely uses libraries that are included
+with any conventional installation of Python 3.6, as well as the custom-written `Utilities`. 

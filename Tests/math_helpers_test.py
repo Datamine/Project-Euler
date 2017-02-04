@@ -9,6 +9,68 @@ sys.path.append(os.getcwd())
 import unittest
 from Utilities import math_helpers
 
+class HexagonalNumbers(unittest.TestCase):
+    """
+    tests for Utilities.math_helpers.hexagonal_number_generator
+    """
+
+    def test_generation(self):
+        """
+        test that the hexagonal number generator generates hexagonal numbers, as expected.
+        """
+        generator = math_helpers.hexagonal_number_generator()
+        first_ten_hex_numbers = [next(generator) for _ in range(10)]
+        canonical_values = [1, 6, 15, 28, 45, 66, 91, 120, 153, 190]
+        self.assertEqual(canonical_values, first_ten_hex_numbers)
+
+class PentagonalNumbers(unittest.TestCase):
+    """
+    tests for Utilities.math_helpers.pentagonal_number_generator
+    """
+
+    def test_generation(self):
+        """
+        test that the pentagonal number generator generates pentagonal numbers, as expected.
+        """
+        generator = math_helpers.pentagonal_number_generator()
+        first_ten_pentagonal_numbers = [next(generator) for _ in range(10)]
+        canonical_values = [1, 5, 12, 22, 35, 51, 70, 92, 117, 145]
+        self.assertEqual(canonical_values, first_ten_pentagonal_numbers)
+
+class IsPentagonal(unittest.TestCase):
+    """
+    tests for Utilities.math_helpers.is_pentagonal
+    """
+
+    def test_first_thousand_pentagonal_numbers(self):
+        """
+        test that the first thousand pentagonal numbers are identified as such.
+        """
+        generator = math_helpers.pentagonal_number_generator()
+        first_thousand_pentagonal_numbers = [next(generator) for _ in range(1000)]
+        all_pentagonal = all(map(lambda x: math_helpers.is_pentagonal(x), first_thousand_pentagonal_numbers))
+        self.assertEqual(all_pentagonal, True)
+
+    def test_very_large_pentagonal_numbers(self):
+        """
+        test that even large pentagonal numbers are correctly identified as such
+        (i.e. check whether we might expect to run into floating-point error)
+        """
+        large_n = [x**9 for x in range(10000,10500)]
+        pentagonals = [(n * (3 * n - 1)) // 2 for n in large_n]
+        all_pentagonal = all(map(lambda x: math_helpers.is_pentagonal(x), pentagonals))
+        self.assertEqual(all_pentagonal, True)
+
+    def test_not_pentagonal(self):
+        """
+        test some non-pentagonal numbers, make sure they don't show up as pentagonal.
+        """
+        generator = math_helpers.pentagonal_number_generator()
+        pents = set(next(generator) for _ in range(1000))
+        non_pentagonals = set(x for x in range(max(pents)) if x not in pents)
+        any_pentagonals = any(map(lambda x: math_helpers.is_pentagonal(x), non_pentagonals))
+        self.assertEqual(any_pentagonals, False)
+
 class TriangleNumbers(unittest.TestCase):
     """
     tests for Utilities.math_helpers.triangle_number_generator
@@ -19,9 +81,9 @@ class TriangleNumbers(unittest.TestCase):
         test that the generator yields the correct output when indexing from zero
         """
         generator = math_helpers.triangle_number_generator()
-        first_ten_triangle_numbers = [next(generator) for _ in range(11)]
+        first_eleven_triangle_numbers = [next(generator) for _ in range(11)]
         canonical_values = [0, 1, 3, 6, 10, 15, 21, 28, 36, 45, 55]
-        self.assertEqual(canonical_values, first_ten_triangle_numbers)
+        self.assertEqual(canonical_values, first_eleven_triangle_numbers)
 
     def test_generation_index_one(self):
         """
@@ -31,6 +93,16 @@ class TriangleNumbers(unittest.TestCase):
         first_ten_triangle_numbers = [next(generator) for _ in range(10)]
         canonical_values = [1, 3, 6, 10, 15, 21, 28, 36, 45, 55]
         self.assertEqual(canonical_values, first_ten_triangle_numbers)
+
+class FirstNTriangleNumbers(unittest.TestCase):
+    """
+    tests for Utilities.math_helpers.first_n_triangle_numbers
+    """
+
+    def test_first_n_triangle_numbers(self):
+        self.assertEqual(list(math_helpers.first_n_triangle_numbers(0)), [])
+        self.assertEqual(list(math_helpers.first_n_triangle_numbers(1)), [1])
+        self.assertEqual(list(math_helpers.first_n_triangle_numbers(5)), [1, 3, 6, 10, 15])
 
 class Divisors(unittest.TestCase):
     """
