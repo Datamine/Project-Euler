@@ -17,15 +17,15 @@ def main():
         n = i
         current_chain_length = 1
         while n != 1:
+            current_chain_length += 1
             if n in chain_lengths:
                 # take advantage of memoized chain lengths to shortcut computations
                 current_chain_length += chain_lengths[n]
                 break
             n = next_collatz(n)
-            current_chain_length += 1
 
-        if n not in chain_lengths:
-            chain_lengths[n] = current_chain_length
+        # I could use "if not i in chain_lengths", but that's a bit slower & unnecessary
+        chain_lengths[i] = current_chain_length
 
         if current_chain_length > max_chain_length:
             max_chain_length = current_chain_length
