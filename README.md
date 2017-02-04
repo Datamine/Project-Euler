@@ -28,5 +28,5 @@ Run simply with `python3 confirm-solutions.py`.
 
 ## Further Notes
 
-There's no `requirements.txt` because this project solely uses libraries that are included
+There's no `requirements.txt` because this project solely uses the standard modules that are included
 with any conventional installation of Python 3.6, as well as the custom-written `Utilities`. 
