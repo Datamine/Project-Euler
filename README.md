@@ -33,4 +33,4 @@ Run simply with `python3 confirm-solutions.py`.
 There's no `requirements.txt` because this project solely uses the standard modules that are included
 with any conventional installation of Python 3.6, as well as the custom-written `Utilities`. 
 
-I've also featured this project on my blog, where I [wrote a little bit about it](https://github.com/Datamine/Project-Euler).
+I've also featured this project on my blog, where I [wrote a little bit about it](http://johnloeber.com/docs/projecteuler.html).
