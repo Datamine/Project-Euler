@@ -14,8 +14,6 @@ def main():
     max_sequence_length = 0
     corresponding_prime = 0
 
-    chain = []
-
     for index, prime in enumerate(prime_number_list):
         sequence_length = 0
         total = 0
