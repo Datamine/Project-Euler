@@ -3,7 +3,7 @@
 def main():
     # dynamic programming problem. The trick is to realize that the number of paths
     # to a given square is the sum of the number of paths to square to the left
-    # and to the right. then proceed iteratively and fill out the grid.
+    # and to the above. then proceed iteratively and fill out the grid.
     grid_size = 20
     grid = [[None] * 20 for i in range(20)]
 
